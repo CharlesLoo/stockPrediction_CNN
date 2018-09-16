@@ -15,7 +15,8 @@ As said previous, prediction strategy is using previous n day’s history data p
 These pictures would be labeled by the return of the price after m days. The return here is logarithmic return.
 Price is mean of open, close, high and low price. ‘t’ is current time and ‘t+m’ is the future price. When ‘r’ > 0, it will be labeled ‘1’ which means ‘up’, otherwise it is ‘-1’.
 
-<div align=center><img width="350" height="350" src="https://github.com/CharlesLoo/stockPrediction_CNN/paper/formular.PNG"/></div>
+<div align=center><img width="350" height="350" src="https://github.com/CharlesLoo/tockPrediction_CNN/paper/fomular.PNG
+"/></div>
 
 # Result
 As expected, with much more layers network, VGG19 need much more time to train. Because this mode takes more memory, however, this model does have much better results than the Alexnet. As shown In Fig 4.12 it can achieve the smallest testing error of about 0.61 and with the best test accuracy of about 58%. Unfortunately,withthetraininggoeson,thetestlosswouldincreaseagain,sincethismodel isalsooverﬁtting. Butitisstillbetterthanmostpreviousworks,likePoulos(Poulos, 2014)’s 3-layer LSTM (55.45%) and SVM (56.31%) model.
