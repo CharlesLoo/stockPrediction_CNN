@@ -8,17 +8,16 @@ In this experiment, images represented history data would be used as input. Firs
 Open, close, high and low price is used in the experiment. At ﬁrst, only the high and low price were used since high and low contains more information according to Siripurapu(Siripurapu, 2014). High and low price are bound of daily stock price, which also contains the open and close price. Open and close is in a sense of statistical artifacts, which are the prices sampled by the Google or Yahoo. However, after tried with only open and close price, the result was not good. Information on input images only with open and close price is not enough for the deep network to extract enough useful features. Therefore, in next experiment, four kinds of the price of the stock are input into the network, then the network can automatically choose which one is more useful.
 Then images of stock price would be poled as RGB with size 5*5 kb. The windows size of an image is n 180, 90, 60, 30, which means using n days history data pictures to predict future, m30,20,10,5days. An example input image is showed as
 
-<div align=center><img width="350" height="350" src="https://github.com/CharlesLoo/stockPrediction_CNN/paper/input.PNG"/></div>
+<div align=center><img width="350" height="350" src="https://github.com/CharlesLoo/stockPrediction_CNN/blob/master/paper/input.PNG"/></div>
 
 # Prediction strategy 
 As said previous, prediction strategy is using previous n day’s history data pictures to predict future m days. 4 combination of n and m are used including using 180 days history data to predict 30 days price, using 90 days history to predict 20 days price, using 60 days history data to predict 10 days price and using 30 days history data to predict 5 days price.
 These pictures would be labeled by the return of the price after m days. The return here is logarithmic return.
 Price is mean of open, close, high and low price. ‘t’ is current time and ‘t+m’ is the future price. When ‘r’ > 0, it will be labeled ‘1’ which means ‘up’, otherwise it is ‘-1’.
 
-<div align=center><img width="350" height="350" src="https://github.com/CharlesLoo/tockPrediction_CNN/paper/fomular.PNG
-"/></div>
+<div align=center><img width="450" height="150" src="https://github.com/CharlesLoo/stockPrediction_CNN/blob/master/paper/fomular.PNG"/></div>
 
 # Result
 As expected, with much more layers network, VGG19 need much more time to train. Because this mode takes more memory, however, this model does have much better results than the Alexnet. As shown In Fig 4.12 it can achieve the smallest testing error of about 0.61 and with the best test accuracy of about 58%. Unfortunately,withthetraininggoeson,thetestlosswouldincreaseagain,sincethismodel isalsooverﬁtting. Butitisstillbetterthanmostpreviousworks,likePoulos(Poulos, 2014)’s 3-layer LSTM (55.45%) and SVM (56.31%) model.
 
-<div align=center><img width="350" height="350" src="https://github.com/CharlesLoo/stockPrediction_CNN/paper/loss2.PNG"/></div>
+<div align=center><img width="350" height="350" src="https://github.com/CharlesLoo/stockPrediction_CNN/blob/master/paper/loss2.PNG"/></div>
